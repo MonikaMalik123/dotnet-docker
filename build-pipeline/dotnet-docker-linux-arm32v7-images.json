@@ -200,8 +200,11 @@
     "imageBuilder.imageName": {
       "value": "microsoft/dotnet-buildtools-prereqs:image-builder-debian-20180130154400"
     },
+    "imageBuilder.manifest": {
+      "value": "manifest.json"
+    },
     "imageBuilder.commonArgs": {
-      "value": "build --manifest manifest.json $(PB_imageBuilder_queueCustomArgs)",
+      "value": "build --manifest $(imageBuilder.manifest) $(PB_imageBuilder_queueCustomArgs)",
       "allowOverride": true
     },
     "imageBuilder.armBuildArgs": {
@@ -220,7 +223,7 @@
       "value": ""
     },
     "PB_imageBuilder_path": {
-      "value": ""
+      "value": "*"
     },
     "PB_imageBuilder_queueCustomArgs": {
       "value": ""

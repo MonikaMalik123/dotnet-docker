@@ -185,8 +185,11 @@
     "imageBuilder.imageName": {
       "value": "microsoft/dotnet-buildtools-prereqs:image-builder-nanoserver-20180130074345"
     },
+    "imageBuilder.manifest": {
+      "value": "manifest.json"
+    },
     "imageBuilder.args": {
-      "value": "build --manifest manifest.json --path $(PB_imageBuilder_path) --var ArchitectureFilter=amd64 $(PB_imageBuilder_customVars) --push --username $(PB_docker_username) --password $(PB_docker_password) $(PB_imageBuilder_queueCustomArgs)",
+      "value": "build --manifest $(imageBuilder.manifest) --path $(PB_imageBuilder_path) --var ArchitectureFilter=amd64 $(PB_imageBuilder_customVars) --push --username $(PB_docker_username) --password $(PB_docker_password) $(PB_imageBuilder_queueCustomArgs)",
       "allowOverride": true
     },
     "imageBuilder.containerName": {
@@ -200,7 +203,7 @@
       "value": ""
     },
     "PB_imageBuilder_path": {
-      "value": ""
+      "value": "*"
     },
     "PB_imageBuilder_queueCustomArgs": {
       "value": ""
